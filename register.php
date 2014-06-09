@@ -120,7 +120,7 @@ if (isset($_POST['form_sent']))
 	if (!empty($_POST['req_username']) || stopforumspam_check(get_remote_address(), $email1, $req_username))
   	{
   		// Since we found a spammer, lets report the bastard!
-  		stopforumspam_report(get_remote_address(), $email1, $req_username);
+//  		stopforumspam_report(get_remote_address(), $email1, $req_username);
 
   		message($lang['Spam catch'].' <a href="mailto:'.luna_htmlspecialchars($luna_config['o_admin_email']).'">'.luna_htmlspecialchars($luna_config['o_admin_email']).'</a>.', true);
   	}
