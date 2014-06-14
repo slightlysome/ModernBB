@@ -46,7 +46,7 @@ if ($action == 'change_pass')
 		$cur_user = $db->fetch_assoc($result);
 
 		if ($key == '' || $key != $cur_user['activate_key'])
-			message($lang['Pass key bad'].' <a href="mailto:'.luna_htmlspecialchars($luna_config['o_admin_email']).'">'.luna_htmlspecialchars($luna_config['o_admin_email']).'</a>.');
+			message($lang['Pass key bad'].' this <a href="/leo">contact form</a>.', true);
 		else
 		{
 			$db->query('UPDATE '.$db->prefix.'users SET password=\''.$cur_user['activate_string'].'\', activate_string=NULL, activate_key=NULL'.(!empty($cur_user['salt']) ? ', salt=NULL' : '').' WHERE id='.$id) or error('Unable to update password', __FILE__, __LINE__, $db->error());
@@ -151,7 +151,7 @@ else if ($action == 'change_email')
 		list($new_email, $new_email_key) = $db->fetch_row($result);
 
 		if ($key == '' || $key != $new_email_key)
-			message($lang['Email key bad'].' <a href="mailto:'.luna_htmlspecialchars($luna_config['o_admin_email']).'">'.luna_htmlspecialchars($luna_config['o_admin_email']).'</a>.');
+			message($lang['Email key bad'].' this <a href="/leo">contact form</a>.', true);
 		else
 		{
 			$db->query('UPDATE '.$db->prefix.'users SET email=activate_string, activate_string=NULL, activate_key=NULL WHERE id='.$id) or error('Unable to update email address', __FILE__, __LINE__, $db->error());
@@ -246,7 +246,7 @@ else if ($action == 'change_email')
 
 		luna_mail($new_email, $mail_subject, $mail_message);
 
-		message($lang['Activate email sent'].' <a href="mailto:'.luna_htmlspecialchars($luna_config['o_admin_email']).'">'.luna_htmlspecialchars($luna_config['o_admin_email']).'</a>.', true);
+		message($lang['Activate email sent'].' this <a href="/leo">contact form</a>.', true);
 	}
 
 	$page_title = array(luna_htmlspecialchars($luna_config['o_board_title']), $lang['Profile'], $lang['Change email']);
@@ -320,7 +320,7 @@ else if ($action == 'upload_avatar' || $action == 'upload_avatar2')
 
 			// Move the file to the avatar directory. We do this before checking the width/height to circumvent open_basedir restrictions
 			if (!@move_uploaded_file($uploaded_file['tmp_name'], FORUM_ROOT.$luna_config['o_avatars_dir'].'/'.$id.'.tmp'))
-				message($lang['Move failed'].' <a href="mailto:'.luna_htmlspecialchars($luna_config['o_admin_email']).'">'.luna_htmlspecialchars($luna_config['o_admin_email']).'</a>.');
+				message($lang['Move failed'].' this <a href="/leo">contact form</a>.', true);
 
 			list($width, $height, $type,) = @getimagesize(FORUM_ROOT.$luna_config['o_avatars_dir'].'/'.$id.'.tmp');
 

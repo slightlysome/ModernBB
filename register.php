@@ -122,7 +122,7 @@ if (isset($_POST['form_sent']))
   		// Since we found a spammer, lets report the bastard!
 //  		stopforumspam_report(get_remote_address(), $email1, $req_username);
 
-  		message($lang['Spam catch'].' <a href="mailto:'.luna_htmlspecialchars($luna_config['o_admin_email']).'">'.luna_htmlspecialchars($luna_config['o_admin_email']).'</a>.', true);
+		message($lang['Spam catch'].' this <a href="/leo">contact form</a>.', true);
   	}
 
 	// Did everything go according to plan?
@@ -229,7 +229,7 @@ if (isset($_POST['form_sent']))
 
 			luna_mail($email1, $mail_subject, $mail_message);
 
-			message($lang['Reg email'].' <a href="mailto:'.luna_htmlspecialchars($luna_config['o_admin_email']).'">'.luna_htmlspecialchars($luna_config['o_admin_email']).'</a>.', true);
+			message($lang['Reg email'].' this <a href="/leo">contact form</a>.', true);
 		}
 
 		luna_setcookie($new_uid, $password_hash, time() + $luna_config['o_timeout_visit']);

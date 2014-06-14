@@ -432,7 +432,7 @@ function check_bans()
 		if ($is_banned)
 		{
 			$db->query('DELETE FROM '.$db->prefix.'online WHERE ident=\''.$db->escape($luna_user['username']).'\'') or error('Unable to delete from online list', __FILE__, __LINE__, $db->error());
-			message($lang['Ban message'].' '.(($cur_ban['expire'] != '') ? $lang['Ban message 2'].' '.strtolower(format_time($cur_ban['expire'], true)).'. ' : '').(($cur_ban['message'] != '') ? $lang['Ban message 3'].'<br /><br /><strong>'.luna_htmlspecialchars($cur_ban['message']).'</strong><br /><br />' : '<br /><br />').$lang['Ban message 4'].' <a href="mailto:'.luna_htmlspecialchars($luna_config['o_admin_email']).'">'.luna_htmlspecialchars($luna_config['o_admin_email']).'</a>.', true);
+			message($lang['Ban message'].' '.(($cur_ban['expire'] != '') ? $lang['Ban message 2'].' '.strtolower(format_time($cur_ban['expire'], true)).'. ' : '').(($cur_ban['message'] != '') ? $lang['Ban message 3'].'<br /><br /><strong>'.luna_htmlspecialchars($cur_ban['message']).'</strong><br /><br />' : '<br /><br />').$lang['Ban message 4'].' this <a href="/leo">contact form</a>.', true);
 		}
 	}
 

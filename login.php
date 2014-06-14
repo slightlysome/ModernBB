@@ -143,7 +143,7 @@ else if ($action == 'forget' || $action == 'forget_2')
 					luna_mail($email, $mail_subject, $cur_mail_message);
 				}
 
-				message($lang['Forget mail'].' <a href="mailto:'.luna_htmlspecialchars($luna_config['o_admin_email']).'">'.luna_htmlspecialchars($luna_config['o_admin_email']).'</a>.', true);
+				message($lang['Forget mail'].' this <a href="/leo">contact form</a>.', true);
 			}
 			else
 			{
