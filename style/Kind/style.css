@@ -1038,7 +1038,7 @@ span.bbs, del {
 	text-decoration: line-through;
 }
 
-blockquote p {
+blockquote {
 	font-size: 13px;
 }
 
