@@ -259,7 +259,7 @@ if ($luna_user['is_guest'])
 }
 
 if ($luna_config['o_menu_title'] == 1) {
-	$menu_title = '<a href="index.php" class="navbar-brand">'.luna_htmlspecialchars($luna_config['o_board_title']).'</a>';
+	$menu_title = '<a href="/" class="navbar-brand">Slightly Some Nucleus</a>';
 } else {
 	$menu_title = '';
 }
