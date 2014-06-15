@@ -732,7 +732,7 @@ function handle_list_tag($content, $type = '*')
 		$content = preg_replace_callback($re_list, create_function('$matches', 'return handle_list_tag($matches[2], $matches[1]);'), $content);
 	}
 
-	$content = preg_replace('#\s*\[\*\](.*?)\[/\*\]\s*#s', '<li><p>$1</p></li>', luna_trim($content));
+	$content = preg_replace('#\s*\[\*\](.*?)\[/\*\]\s*#s', '<li>$1</li>', luna_trim($content));
 
 	if ($type == '*')
 		$content = '<ul>'.$content.'</ul>';
