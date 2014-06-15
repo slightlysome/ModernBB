@@ -96,7 +96,7 @@ if (($luna_config['o_feed_type'] == 1 || $luna_config['o_feed_type'] == 2) && (i
   _paq.push(["enableLinkTracking"]);
 
   (function() {
-    var u=(("/stats/";
+    var u="/stats/";
     _paq.push(["setTrackerUrl", u+"piwik.php"]);
     _paq.push(["setSiteId", "4"]);
     var d=document, g=d.createElement("script"), s=d.getElementsByTagName("script")[0]; g.type="text/javascript";
